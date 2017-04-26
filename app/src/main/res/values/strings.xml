@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CPHos</string>
+    <string name="login">เข้าใช้งาน</string>
+    <string name="regis">สมัครสมาชิก</string>
+</resources>
