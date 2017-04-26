@@ -2,6 +2,8 @@
     <string name="app_name">CPHos</string>
     <string name="login">เข้าใช้งาน</string>
     <string name="regis">สมัครสมาชิก</string>
-    <string name="user">User:</string>
-    <string name="password">password:</string>
+    <string name="user">กรุณากรอก User:</string>
+    <string name="password">กรุณากรอก password:</string>
+    <string name="signup">signup</string>
+    <string name="name">กรุณากรอก Name :</string>
 </resources>

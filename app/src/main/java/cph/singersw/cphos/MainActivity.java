@@ -1,12 +1,14 @@
 package cph.singersw.cphos;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-    public class MainActivity extends AppCompatActivity {
+    public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView textView;
     private Button button;
 
@@ -18,12 +20,21 @@ import android.widget.TextView;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-     //Initial View  การผูกตัวแปร
+        //Initial View  การผูกตัวแปร
         initialView();
+
+
+        //Controller  การทำคอนโทรลเลอร์เชื่อม
+        controlller();
 
 
 
     } //Main Method  เมทธอดหลัก
+
+        private void controlller() {
+            textView.setOnClickListener(MainActivity.this);
+            button.setOnClickListener(MainActivity.this);
+        }
 
         private void initialView() {
             userEditText = (EditText) findViewById(R.id.edtUser);
@@ -32,5 +43,22 @@ import android.widget.TextView;
             button = (Button) findViewById(R.id.btnLogin);
 
         }
+
+        @Override
+        public void onClick(View v) {
+
+        //For TextView  (อยู่ในเทควิว)
+            if (v == textView) {
+                //Intent to SignUp  (ย้ายการทำงานจากหน้า Intent to SignUp)
+                Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+                startActivity(intent);
+            }
+
+            //For Button
+            if (v == button) {
+
+            }
+        }
+
 
     }//Main Class  คลาสหลัก
