@@ -19,7 +19,8 @@ import java.util.jar.Attributes;
 public class PortData extends AsyncTask<String,Void, String> {
 
     private Context context;
-    private static final String urlPHP = "http://swiftcodingthai.com/cph/addUserSuwat.php";
+//    private static final String urlPHP = "http://swiftcodingthai.com/cph/addUserSuwat.php";
+    private static final String urlPHP = "http://swiftcodingthai.com/cph/addUserMaster.php";
 
     public PortData(Context context) {
         this.context = context;

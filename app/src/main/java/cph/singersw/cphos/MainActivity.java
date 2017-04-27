@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -80,7 +81,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         private void checkUserAnPass() {
             try {
-                String urlJSON="http://swiftcodingthai.com/cph/getDataCPHos.php";
+//                String urlJSON="http://swiftcodingthai.com/cph/getDataCPHos.php";
+                String urlJSON="http://swiftcodingthai.com/cph/getDataMaster.php";
                 boolean b = true;
                 String[] columnString = new String[]{"id","Name","User","Password"};
                 String[] loginString = new  String[columnString.length];
@@ -101,6 +103,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             loginString[i1] = jsonObject.getString(columnString[i1]);
                             Log.d("27AprilV1","loginString(" + i1 + ") ==>" + loginString[i1]);
                         }
+                    }
+                    if (b) {
+                        // User False
+                        Myalert myalert = new Myalert(MainActivity.this);
+                        myalert.myDialog("User False","No This User in my Database");
+
+                    } else if (passwordString.equals(loginString[3])) {
+                        Toast.makeText(MainActivity.this, "Welcome" + loginString[1],
+                                Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(MainActivity.this, ServiceActivity.class);
+                        intent.putExtra("Login", loginString);
+                        startActivity(intent);
+                        finish();
+
+                    } else {
+                        Myalert myalert = new Myalert(MainActivity.this);
+                        myalert.myDialog("Password False","Please Try Again Password False");
+
                     }
                 }
 
