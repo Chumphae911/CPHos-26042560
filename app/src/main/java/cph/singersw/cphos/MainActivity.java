@@ -11,6 +11,7 @@ import android.widget.TextView;
     public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView textView;
     private Button button;
+        private String userString, passwordString;
 
     //Explicit  พื้นที่ประกาสตัวแปร เพื่อจองหน่วยความจำทุกครั้ง
     private EditText userEditText, passwordEditText;
@@ -56,7 +57,19 @@ import android.widget.TextView;
 
             //For Button
             if (v == button) {
+                //Ger Value From EdiText
+                userString = userEditText.getText().toString().trim();
+                passwordString = passwordEditText.getText().toString().trim();
 
+                //Check Space
+                if (userString.equals("") || passwordString.equals("")) {
+                    //Have Space
+
+                } else {
+                    //No Spece
+                    Myalert myalert = new Myalert(MainActivity.this);
+                    myalert.myDialog("Have Speace","Plese Fill All Every Blank");
+                }
             }
         }
 
