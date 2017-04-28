@@ -8,8 +8,6 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
-import org.json.JSONArray;
-
 /**
  * Created by Drackjoie on 27/4/2560.
  */
@@ -37,7 +35,7 @@ public class GetData extends AsyncTask<String, Void, String> {
 
 
         } catch (Exception e) {
-            Log.d("27AprilV1", "e doin ==>" + e.toString());
+            Log.d("27AprilV2", "e doin ==>" + e.toString());
             return null;
         } // ทำ Log Catch เพื่อทำการแจ้งเตือน Error
 

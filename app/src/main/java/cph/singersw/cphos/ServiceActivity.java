@@ -1,7 +1,7 @@
 package cph.singersw.cphos;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -56,7 +56,7 @@ public class ServiceActivity extends AppCompatActivity {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 nameStrings[i] = jsonObject.getString("Name");
                 dateStrings[i] = jsonObject.getString("Date_Receive");
-                detailStrings[i] = jsonObject.getString("Desciption");
+                detailStrings[i] = jsonObject.getString("Description");
                 qrcordString[i] = jsonObject.getString("QR_code");
 
             }
